@@ -1,1 +1,1 @@
-Essy Calculator
+Easy Calculator
