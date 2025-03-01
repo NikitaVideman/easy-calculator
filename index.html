@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <script src="src/main.js"></script>
+    <link rel="stylesheet" href="src/f.css">
+    <title>Vaginator</title>
+</head>
+<body>
+
+<div id="calculator">
+    <span id="screen"></span>
+
+    <button class="btn" onclick="bufferNumber(1)">1</button>
+    <button class="btn" onclick="bufferNumber(2)">2</button>
+    <button class="btn" onclick="bufferNumber(3)">3</button>
+    <button class="btn" onclick="bufferNumber(4)">4</button>
+    <button class="btn" onclick="bufferNumber(5)">5</button>
+    <button class="btn" onclick="bufferNumber(6)">6</button>
+    <button class="btn" onclick="bufferNumber(7)">7</button>
+    <button class="btn" onclick="bufferNumber(8)">8</button>
+    <button class="btn" onclick="bufferNumber(9)">9</button>
+    <button class="btn" onclick="bufferNumber(0)">0</button>
+
+    <button class="btn" onclick="bufferOperation(OPERATIONS.INCREMENT)">+</button>
+    <button class="btn" onclick="bufferOperation(OPERATIONS.DECREMENT)">-</button>
+    <button class="btn" onclick="bufferOperation(OPERATIONS.MULTIPLY)">*</button>
+    <button class="btn" onclick="bufferOperation(OPERATIONS.DIVIDE)">/</button>
+    <button class="btn" onclick="calculateAndRender()">=</button>
+
+</div>
+
+
+</body>
+</html>
