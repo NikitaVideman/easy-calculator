@@ -9,5 +9,5 @@ Purpose of the project is to practice JavaScript, HTML and CSS.
 3. Raising k to a power of n, `k^n`.
 
 ## Todo:
-3. [ ] Inputs display.
+1. [x] Inputs display.
 1. [ ] Complex expression evaluation, `x + b - (b + x) ^ 2`
