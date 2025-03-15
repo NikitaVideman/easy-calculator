@@ -24,6 +24,7 @@ const updateDisplay = () => {
 const bufferNumber = int => {
     numBuffer.push(int)
     updateDisplay()
+    playAudio();
 }
 
 /**
@@ -32,13 +33,24 @@ const bufferNumber = int => {
 const bufferOperation = operation => {
     operatorBuffer.push(operation)
     updateDisplay()
+    playAudio();
 }
 
 
 const calculateAndRender = () => {
     let h3 = document.getElementById("screen")
     h3.innerText = calculate()
+    playAudio();
 }
+
+
+
+
+const cachedAudio = new Audio("public/click.mp3");
+const playAudio = () => {
+    cachedAudio.play()
+}
+
 
 const calculate = () => {
     let a = numBuffer[0]
@@ -74,4 +86,5 @@ const resetBuffers = () => {
     document.getElementById("screen").innerHTML = ""
     numBuffer = []
     operatorBuffer = []
+    playAudio();
 }
