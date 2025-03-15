@@ -1,26 +1,29 @@
 const OPERATIONS = {
 
-    INCREMENT: 'INCREMENT',
-
-    DECREMENT: 'DECREMENT',
-
-    MULTIPLY: 'MULTIPLY',
-
-    DIVIDE: 'DIVIDE',
+    INCREMENT: "+",
+    DECREMENT: "-",
+    MULTIPLY: "*",
+    DIVIDE: "/",
+    DEGREES: "^",
+    ROOT: "0",
+    PERCENTAGE: "%",
 
 };
 
-const RESULT_PREFIX = "Result: ";
 
 let numBuffer = [] // 2 потому что пока что калькулятор бинарный
 let operatorBuffer = []
 
+
+const updateDisplay = () => {
+    document.getElementById("screen").innerHTML = [numBuffer[0], operatorBuffer[0], numBuffer[1]].join(' ');
+}
 /**
  * Сохраняет значение для дальнейшего вычисления
  */
 const bufferNumber = int => {
     numBuffer.push(int)
-    console.log("[BUFFER]: " + int)
+    updateDisplay()
 }
 
 /**
@@ -28,12 +31,13 @@ const bufferNumber = int => {
  */
 const bufferOperation = operation => {
     operatorBuffer.push(operation)
-    console.log("[OPERATIONS]: " + operation)
+    updateDisplay()
 }
+
 
 const calculateAndRender = () => {
     let h3 = document.getElementById("screen")
-    h3.innerText = RESULT_PREFIX + calculate()
+    h3.innerText = calculate()
 }
 
 const calculate = () => {
@@ -53,5 +57,21 @@ const calculate = () => {
 
         case OPERATIONS.DIVIDE:
             return a / b;
+
+        case OPERATIONS.DEGREES:
+            return Math.pow(a, b)
+
+        case OPERATIONS.ROOT:
+            return Math.sqrt(a)
+
+        case OPERATIONS.PERCENTAGE:
+            return (a / 100) * b // 10 / 100 = 0.01 * 2 = 0.02
     }
+
+}
+
+const resetBuffers = () => {
+    document.getElementById("screen").innerHTML = ""
+    numBuffer = []
+    operatorBuffer = []
 }
