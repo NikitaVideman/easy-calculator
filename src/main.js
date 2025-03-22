@@ -38,8 +38,13 @@ const bufferOperation = operation => {
 
 
 const calculateAndRender = () => {
+    let cachedResult = calculate()
+    clearBuffers()
+
     let h3 = document.getElementById("screen")
-    h3.innerText = calculate()
+    h3.innerText = cachedResult
+    numBuffer[0] = cachedResult
+
     playAudio();
 }
 
@@ -83,8 +88,11 @@ const calculate = () => {
 }
 
 const resetBuffers = () => {
+  clearBuffers()
+    playAudio();
+}
+const clearBuffers = () => {
     document.getElementById("screen").innerHTML = ""
     numBuffer = []
     operatorBuffer = []
-    playAudio();
 }

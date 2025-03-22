@@ -1,5 +1,5 @@
 :root {
-    --button-color: rgb(191, 34, 34);
+    --button-color: rgb(225, 20, 20);
 }
 
 body {
@@ -9,6 +9,8 @@ body {
     justify-content: center;
     height: 100vh;
     background-image: url("public/q.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 #calculator {
